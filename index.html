@@ -3,263 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cẩm Nang Toàn Tập Về CSS Core</title>
+    <title>Cẩm Nang Toàn Tập Học CSS & Trạm Mini Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html {
             scroll-behavior: smooth;
         }
-        .demo-box {
-            background-color: #3b82f6;
-            border: 8px solid #1d4ed8;
-            padding: 16px;
-            color: white;
-            text-align: center;
-        }
-        /* Hiệu ứng chuyển đổi mượt mà khi mờ/highlight */
         .section-card {
             transition: all 0.4s ease-in-out;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.25);
         }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <header class="bg-slate-950/80 backdrop-blur text-white sticky top-0 z-50 shadow-lg border-b border-slate-800">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-black tracking-wider text-blue-400">CSS.CORE</div>
-            <nav class="flex space-x-3 md:space-x-4 text-xs md:text-sm font-medium">
-                <button onclick="focusSection('box-model')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition text-blue-400 font-bold border border-blue-500/30">Box Model</button>
-                <button onclick="focusSection('layouts')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition">Layouts</button>
-                <button onclick="focusSection('display')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition">Display</button>
-                <button onclick="focusSection('responsive')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition">Responsive</button>
-                <button onclick="focusSection('frameworks')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition">Frameworks</button>
+    <header class="bg-slate-950/90 backdrop-blur text-white sticky top-0 z-50 shadow-lg border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-xl font-black tracking-wider text-blue-400">CSS.CORE & GAME</div>
+            <nav class="flex flex-wrap justify-center gap-2 text-xs md:text-sm font-medium">
+                <button onclick="focusSection('box-model')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 text-blue-400 font-bold border border-blue-500/30 transition">1. Box Model</button>
+                <button onclick="focusSection('layouts')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700 transition">2. Layouts</button>
+                <button onclick="focusSection('display')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700 transition">3. Display</button>
+                <button onclick="focusSection('responsive')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700 transition">4. Responsive</button>
+                <button onclick="focusSection('frameworks')" class="nav-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700 transition">5. Frameworks</button>
+                <button onclick="focusSection('mini-game-hub')" class="nav-btn px-4 py-1.5 rounded-lg bg-amber-600 text-white hover:bg-amber-500 font-bold shadow-md transition animate-pulse">🎮 KHU MINI GAME</button>
             </nav>
         </div>
     </header>
 
-    <section class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 text-white py-12 px-6 border-b border-slate-800">
-        <div class="container mx-auto max-w-4xl text-center">
+    <section class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white py-12 px-6 border-b border-slate-800 text-center">
+        <div class="container mx-auto max-w-4xl">
             <span class="bg-blue-500/10 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
-                Hướng Dẫn Tương Tác Cao
+                Giáo trình Front-End Tương Tác Cao
             </span>
-            <h1 class="text-3xl md:text-4xl font-extrabold mt-4 mb-4 leading-tight">
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-4 mb-4 leading-tight">
                 Làm Chủ Diện Mạo Website Với CSS
             </h1>
             <p class="text-sm md:text-base text-slate-400 leading-relaxed max-w-3xl mx-auto">
-                CSS (Cascading Style Sheets) là ngôn ngữ định kiểu quyết định diện mạo trang web. 
-                <span class="text-yellow-400 font-medium">Hãy bấm vào các nút menu ở trên</span> để xem chi tiết từng phần, các phần khác sẽ tự động tối đi và mini-game trắc nghiệm sẽ lộ diện!
+                CSS (Cascading Style Sheets) là ngôn ngữ định kiểu, đóng vai trò quyết định diện mạo của trang web. Nắm vững các khái niệm cốt lõi như Box Model, Display, Layout, Responsive Design cùng hai frameworks phổ biến là Bootstrap và Tailwind CSS là nền tảng bắt buộc để xây dựng giao diện hiện đại, tối ưu cho lập trình viên. 
+                <br><span class="text-amber-400 font-bold mt-2 inline-block">Hãy sử dụng thanh menu ở trên để kích hoạt chế độ Highlight từng phần lý thuyết chuyên sâu hoặc tham gia giải đố tại Khu Mini Game độc lập!</span>
             </p>
         </div>
     </section>
 
-    <main class="container mx-auto px-6 py-12 max-w-4xl space-y-12 flex-grow">
+    <main class="container mx-auto px-6 py-12 max-w-4xl space-y-16 flex-grow">
 
-        <section id="box-model" class="section-card bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 md:p-8 shadow-xl">
+        <section id="box-model" class="section-card bg-slate-800/80 border border-slate-700/60 rounded-2xl p-6 md:p-8 shadow-xl glow-effect">
             <div class="flex items-center space-x-3 mb-6">
                 <span class="text-2xl font-bold text-blue-500">1.</span>
-                <h2 class="text-2xl font-bold text-white">Giới thiệu Box Model</h2>
+                <h2 class="text-2xl font-bold text-white">Giới thiệu chuyên sâu về Box Model</h2>
             </div>
-            <p class="text-slate-300 mb-6 leading-relaxed">
-                Trong CSS, mọi phần tử HTML đều được bao bọc bởi một khối hình hộp chữ nhật gọi là <strong>Box Model</strong>. Khối này được chia thành 4 lớp từ trong ra ngoài: Content (Nội dung), Padding (Khoảng đệm), Border (Đường viền), và Margin (Khoảng cách lề).
-            </p>
             
-            <div class="grid md:grid-cols-5 gap-6 items-center mb-8">
-                <div class="md:col-span-3 space-y-3 text-sm text-slate-300">
-                    <p><span class="bg-blue-500/20 text-blue-400 font-bold px-2 py-0.5 rounded text-xs mr-2">Content</span> Nội dung thực tế: Chứa chữ, hình ảnh, video.</p>
-                    <p><span class="bg-green-500/20 text-green-400 font-bold px-2 py-0.5 rounded text-xs mr-2">Padding</span> Khoảng đệm: Khoảng cách giữa nội dung và đường viền.</p>
-                    <p><span class="bg-indigo-500/20 text-indigo-400 font-bold px-2 py-0.5 rounded text-xs mr-2">Border</span> Đường viền: Lớp viền bao quanh phần tử.</p>
-                    <p><span class="bg-rose-500/20 text-rose-400 font-bold px-2 py-0.5 rounded text-xs mr-2">Margin</span> Khoảng cách lề: Khoảng cách giữa phần tử đó và xung quanh.</p>
-                    <div class="mt-4 p-3 bg-slate-900 rounded-lg border border-slate-700 font-mono text-xs text-yellow-400">
-                        Tổng width = Content + 2×Padding + 2×Border + 2×Margin
+            <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                <p>
+                    Trong thế giới CSS, trình duyệt coi mọi phần tử HTML (như một đoạn văn, một nút bấm, một hình ảnh) như một chiếc hộp chữ nhật phẳng xếp chồng hoặc đặt cạnh nhau. Khái niệm cốt lõi này gọi là <strong>Box Model (Mô hình hộp)</strong>. Việc hiểu cách tính toán kích thước của chiếc hộp này là kỹ năng tối quan trọng giúp bạn kiểm soát tuyệt đối không gian hiển thị và tránh được các lỗi vỡ bố cục (layout) nghiêm trọng.
+                </p>
+                <p>
+                    Mỗi khối phần tử HTML không chỉ đơn thuần là phần nội dung bạn nhìn thấy, mà nó được cấu thành từ 4 lớp không gian xếp chồng từ trong ra ngoài:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 my-6 bg-slate-900/60 p-5 rounded-xl border border-slate-700">
+                    <div class="space-y-3 text-xs md:text-sm">
+                        <p><strong class="text-blue-400">Content (Nội dung):</strong> Đây là phần lõi trong cùng của hộp, nơi chứa văn bản, hình ảnh, hoặc video thật sự của bạn. Khi bạn đặt thuộc tính <code class="text-yellow-400">width</code> và <code class="text-yellow-400">height</code> trong CSS, theo mặc định chúng sẽ tác động trực tiếp lên vùng nội dung này.</p>
+                        <p><strong class="text-green-400">Padding (Khoảng đệm):</strong> Là lớp khoảng trống bao quanh phần nội dung và nằm phía trong đường viền. Thêm padding giúp nội dung không bị dính chặt vào viền, tạo cảm giác dễ đọc, tăng tính thẩm mỹ và độ thông thoáng cho giao diện.</p>
+                        <p><strong class="text-indigo-400">Border (Đường viền):</strong> Lớp trung gian bao bọc lấy phần Content và Padding. Bạn có thể tùy biến độ dày (width), kiểu dáng (solid - nét liền, dashed - nét đứt) và màu sắc độc lập cho cả 4 cạnh của đường viền này.</p>
+                        <p><strong class="text-rose-400">Margin (Khoảng cách lề):</strong> Lớp ngoài cùng của Box Model. Nó tạo ra một vùng không gian trống vô hình bao quanh phía bên ngoài đường viền để đẩy các phần tử lân cận ra xa nhau, ngăn chặn các khối nội dung dính liền vào nhau.</p>
+                    </div>
+                    <div class="flex flex-col justify-center items-center bg-slate-950 p-4 rounded-xl border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=600&auto=format&fit=crop" alt="Box Model Concept" class="w-full h-36 object-cover rounded-lg mb-3 filter brightness-90">
+                        <div class="w-full p-2.5 bg-slate-900 rounded border border-slate-700 font-mono text-center text-xs text-emerald-400">
+                            Tổng Width thực tế = Content + (Padding × 2) + (Border × 2)
+                        </div>
                     </div>
                 </div>
-                <div class="md:col-span-2 bg-rose-950/40 p-4 border border-dashed border-rose-800/60 rounded-xl">
-                    <div class="demo-box shadow-lg">Content Box</div>
-                </div>
-            </div>
 
-            <div class="game-container border-t border-slate-700/60 pt-6 mt-6">
-                <h4 class="text-sm font-bold text-yellow-400 uppercase tracking-wider mb-3">🎮 Mini Game: Thử Tài Tính Toán</h4>
-                <p class="text-sm mb-4">Một phần tử có <code class="text-blue-400">width: 200px</code>, <code class="text-green-400">padding: 10px</code>, <code class="text-indigo-400">border: 5px</code>. Tổng chiều rộng thực tế hiển thị trên web là bao nhiêu?</p>
-                <div class="grid grid-cols-2 gap-3 text-sm">
-                    <button onclick="checkAnswer(this, false, 'box-model')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">A. 215px</button>
-                    <button onclick="checkAnswer(this, true, 'box-model')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">B. 230px (Chính xác vì 200 + 10*2 + 5*2)</button>
-                    <button onclick="checkAnswer(this, false, 'box-model')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">C. 200px</button>
-                    <button onclick="checkAnswer(this, false, 'box-model')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">D. 220px</button>
-                </div>
-                <div class="result-msg mt-3 text-sm font-semibold hidden"></div>
+                <p>
+                    <strong>Lưu ý về box-sizing:</strong> Mặc định trình duyệt dùng thuộc tính <code class="text-yellow-400">box-sizing: content-box</code>, nghĩa là kích thước thực tế sẽ bị cộng thêm padding và border. Để dễ quản lý, các lập trình viên hiện đại luôn đặt <code class="text-emerald-400">box-sizing: border-box</code> lên toàn bộ trang web để ép chiều rộng cố định đúng bằng thuộc tính width mà không bị cộng dồn thêm.
+                </p>
             </div>
         </section>
 
-        <section id="layouts" class="section-card bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 md:p-8 shadow-xl">
+        <section id="layouts" class="section-card bg-slate-800/80 border border-slate-700/60 rounded-2xl p-6 md:p-8 shadow-xl">
             <div class="flex items-center space-x-3 mb-6">
                 <span class="text-2xl font-bold text-blue-500">2.</span>
-                <h2 class="text-2xl font-bold text-white">Layouts (Bố cục)</h2>
+                <h2 class="text-2xl font-bold text-white">Layouts (Các Kỹ Thuật Bố Cục Hiện Đại)</h2>
             </div>
-            <p class="text-slate-300 mb-6 leading-relaxed">
-                Layout là cách sắp xếp và căn chỉnh các phần tử trên trang web. Các kỹ thuật layout phổ biến nhất hiện nay bao gồm:
-            </p>
-            <div class="grid md:grid-cols-2 gap-4 mb-6 text-sm">
-                <div class="p-4 bg-slate-900/60 border border-slate-700 rounded-xl">
-                    <h3 class="font-bold text-blue-400 mb-1">Flexbox (Flexible Box Layout)</h3>
-                    <p class="text-slate-400">Tối ưu cho bố cục một chiều (hàng ngang hoặc dọc). Cực mạnh về co giãn linh hoạt.</p>
-                </div>
-                <div class="p-4 bg-slate-900/60 border border-slate-700 rounded-xl">
-                    <h3 class="font-bold text-indigo-400 mb-1">CSS Grid Layout</h3>
-                    <p class="text-slate-400">Tối ưu cho bố cục hai chiều (cả hàng và cột cùng lúc), chia khối lớn trực quan.</p>
-                </div>
-            </div>
+            
+            <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                <p>
+                    Dàn trang (Layout) là nghệ thuật tổ chức, định vị vị trí và sắp xếp thứ tự ưu tiên của các khối nội dung trên màn hình. Giai đoạn sơ khai của web buộc các lập trình viên phải sử dụng các kỹ thuật rất phức tạp và không linh hoạt như Table hay thuộc tính Float. Hiện nay, W3C đã chuẩn hóa thế giới web sang hai hệ thống dàn trang cực kỳ mạnh mẽ và trực quan:
+                </p>
 
-            <div class="game-container border-t border-slate-700/60 pt-6">
-                <h4 class="text-sm font-bold text-yellow-400 uppercase tracking-wider mb-3">🎮 Mini Game: Chọn Công Cụ</h4>
-                <p class="text-sm mb-4">Khi bạn muốn thiết kế một cấu trúc layout phức tạp bao gồm cả hàng dọc và hàng ngang cùng lúc (như chia khung Header, Sidebar, Main Content), công cụ nào tối ưu nhất?</p>
-                <div class="grid grid-cols-2 gap-3 text-sm">
-                    <button onclick="checkAnswer(this, false, 'layouts')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">A. Thuộc tính Float cũ</button>
-                    <button onclick="checkAnswer(this, false, 'layouts')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">B. Inline-Block</button>
-                    <button onclick="checkAnswer(this, true, 'layouts')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">C. CSS Grid Layout</button>
-                    <button onclick="checkAnswer(this, false, 'layouts')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">D. Flexbox chỉ một chiều</button>
+                <div class="grid md:grid-cols-2 gap-6 my-6">
+                    <div class="p-5 bg-slate-900/60 border border-slate-700 rounded-xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-400 mb-2">Flexbox (Flexible Box Layout)</h3>
+                            <p class="text-xs md:text-sm text-slate-300 leading-relaxed mb-4">
+                                Được thiết kế chuyên dụng cho việc quản lý bố cục <strong>Một chiều</strong> (chỉ xử lý theo hàng ngang <code class="text-yellow-400">row</code> hoặc chỉ theo hàng dọc <code class="text-yellow-400">column</code> trong một thời điểm). 
+                                <br><br>Flexbox cực kỳ mạnh mẽ trong việc căn giữa các phần tử theo cả hai trục, tự động phân bổ đều khoảng cách trống còn thừa và co giãn linh hoạt khi kích thước cửa sổ trình duyệt thay đổi đột ngột. Nó là lựa chọn số một cho các cấu trúc nhỏ như thanh menu, bộ lọc, danh sách sản phẩm hay các hàng thẻ card.
+                            </p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=500&auto=format&fit=crop" alt="Flexbox Layout Visual" class="w-full h-32 object-cover rounded-lg opacity-75">
+                    </div>
+
+                    <div class="p-5 bg-slate-900/60 border border-slate-700 rounded-xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-lg text-indigo-400 mb-2">CSS Grid Layout</h3>
+                            <p class="text-xs md:text-sm text-slate-300 leading-relaxed mb-4">
+                                Đây là hệ thống tối ưu cho bố cục lớn mang tính tổng thể <strong>Hai chiều</strong> (quản lý đồng thời và chặt chẽ cả hàng dọc lẫn cột ngang cùng lúc). 
+                                <br><br>CSS Grid cho phép bạn chia cấu trúc trang web thành một mạng lưới các ô như bàn cờ, giúp bạn định vị chính xác vị trí của các khối lớn như Header, Sidebar trái, Main Content chính, Quảng cáo phải hay Footer chỉ bằng vài dòng code ngắn gọn mà không cần lồng ghép quá nhiều thẻ div vào nhau.
+                            </p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1541462608141-ad4979e408c9?q=80&w=500&auto=format&fit=crop" alt="Grid Mesh System" class="w-full h-32 object-cover rounded-lg opacity-75">
+                    </div>
                 </div>
-                <div class="result-msg mt-3 text-sm font-semibold hidden"></div>
             </div>
         </section>
 
-        <section id="display" class="section-card bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 md:p-8 shadow-xl">
+        <section id="display" class="section-card bg-slate-800/80 border border-slate-700/60 rounded-2xl p-6 md:p-8 shadow-xl">
             <div class="flex items-center space-x-3 mb-6">
                 <span class="text-2xl font-bold text-blue-500">3.</span>
-                <h2 class="text-2xl font-bold text-white">CSS Display</h2>
+                <h2 class="text-2xl font-bold text-white">CSS Display (Bản Chất Hiển Thị Khối)</h2>
             </div>
-            <p class="text-slate-300 mb-4">Thuộc tính <code class="text-rose-400 font-mono">display</code> xác định cách phần tử hiển thị và chiếm không gian:</p>
-            <div class="grid sm:grid-cols-2 gap-3 text-xs mb-6">
-                <div class="p-3 bg-slate-900/80 rounded-lg"><b class="text-blue-400">Block:</b> Xuống dòng mới, chiếm 100% chiều rộng (div, p).</div>
-                <div class="p-3 bg-slate-900/80 rounded-lg"><b class="text-green-400">Inline:</b> Cùng dòng, vừa vặn nội dung, không tùy chỉnh được kích thước (span, a).</div>
-                <div class="p-3 bg-slate-900/80 rounded-lg"><b class="text-indigo-400">Inline-Block:</b> Cùng dòng nhưng đặt được width/height.</div>
-                <div class="p-3 bg-slate-900/80 rounded-lg"><b class="text-rose-400">None:</b> Ẩn hoàn toàn, không tốn diện tích trên màn hình.</div>
-            </div>
+            
+            <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                <p>
+                    Thuộc tính <code class="text-rose-400 bg-slate-950 px-1.5 py-0.5 rounded font-mono">display</code> giống như một "bộ luật giao thông" cốt lõi nhất của CSS, định đoạt xem phần tử đó sẽ hành xử như thế nào trên trình duyệt, chiếm lĩnh bao nhiêu diện tích không gian và các phần tử khác có được phép đứng cạnh nó hay không. Có 4 giá trị cơ bản mà bạn phải nằm lòng:
+                </p>
 
-            <div class="game-container border-t border-slate-700/60 pt-6">
-                <h4 class="text-sm font-bold text-yellow-400 uppercase tracking-wider mb-3">🎮 Mini Game: Hiểu Bản Chất</h4>
-                <p class="text-sm mb-4">Thuộc tính nào giúp ẩn phần tử khỏi màn hình mà <strong>không để lại khoảng trống</strong> trống rỗng?</p>
-                <div class="grid grid-cols-2 gap-3 text-sm">
-                    <button onclick="checkAnswer(this, false, 'display')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">A. visibility: hidden;</button>
-                    <button onclick="checkAnswer(this, true, 'display')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">B. display: none;</button>
-                    <button onclick="checkAnswer(this, false, 'display')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">C. opacity: 0;</button>
-                    <button onclick="checkAnswer(this, false, 'display')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">D. display: inline;</button>
+                <div class="space-y-4 pt-2">
+                    <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                        <span class="font-mono text-blue-400 font-bold text-base">display: block;</span>
+                        <p class="text-xs md:text-sm text-slate-300 mt-1">
+                            Phần tử mang giá trị này sẽ tự độc chiếm một hàng riêng biệt, luôn luôn ép các phần tử phía sau phải xuống dòng mới và kéo dài tối đa 100% chiều rộng có sẵn của màn hình cha. Bạn hoàn toàn có toàn quyền đặt kích thước <code class="text-yellow-400">width</code>, <code class="text-yellow-400">height</code>, margin và padding tùy ý cho nó. 
+                            <br><span class="text-slate-500 block mt-1">Ví dụ mặc định: các thẻ &lt;div&gt;, &lt;p&gt;, &lt;h1&gt; đến &lt;h6&gt;, &lt;section&gt;, &lt;ul&gt;, &lt;li&gt;.</span>
+                        </p>
+                    </div>
+                    <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                        <span class="font-mono text-green-400 font-bold text-base">display: inline;</span>
+                        <p class="text-xs md:text-sm text-slate-300 mt-1">
+                            Phần tử sẽ xếp hàng ngang cạnh nhau nếu hàng đó còn đủ không gian trống. Nó chỉ ôm vừa khít lấy phần nội dung chữ bên trong chứ không tự ý xuống dòng. Đặc biệt, bạn <strong>không thể đặt thuộc tính width và height</strong> cho nó, đồng thời khoảng cách lề trên/dưới (margin-top/bottom) cũng không có tác dụng vật lý đẩy các khối khác.
+                            <br><span class="text-slate-500 block mt-1">Ví dụ mặc định: các thẻ &lt;span&gt;, &lt;a&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;small&gt;.</span>
+                        </p>
+                    </div>
+                    <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                        <span class="font-mono text-indigo-400 font-bold text-base">display: inline-block;</span>
+                        <p class="text-xs md:text-sm text-slate-300 mt-1">
+                            Sự lai tạo hoàn hảo thừa hưởng ưu điểm của cả hai loại trên. Phần tử vẫn nằm xếp hàng ngang cạnh nhau trên cùng một dòng như tính chất của <code class="text-green-400">inline</code>, nhưng về mặt kích thước, bạn lại sở hữu toàn quyền đặt chiều rộng, chiều cao, căn chỉnh khoảng cách lề bốn hướng tự do như khối <code class="text-blue-400">block</code>. Rất thích hợp làm các nút bấm song song hoặc các ô lưới ảnh.
+                        </p>
+                    </div>
+                    <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                        <span class="font-mono text-rose-400 font-bold text-base">display: none;</span>
+                        <p class="text-xs md:text-sm text-slate-300 mt-1">
+                            Bốc hơi hoàn toàn khỏi giao diện màn hình. Trình duyệt không chỉ ẩn giấu nó đi để người dùng không nhìn thấy, mà còn triệt tiêu hoàn toàn vùng không gian chiếm dụng của nó trên bố cục. Các khối nội dung nằm phía dưới sẽ tự động nhảy lên lấp vào vị trí trống đó như thể phần tử này chưa từng tồn tại (khác biệt hoàn toàn với thuộc tính ẩn giấu <code class="text-yellow-400">visibility: hidden</code> vẫn giữ nguyên khoảng trống rỗng).
+                        </p>
+                    </div>
                 </div>
-                <div class="result-msg mt-3 text-sm font-semibold hidden"></div>
             </div>
         </section>
 
-        <section id="responsive" class="section-card bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 md:p-8 shadow-xl">
+        <section id="responsive" class="section-card bg-slate-800/80 border border-slate-700/60 rounded-2xl p-6 md:p-8 shadow-xl">
             <div class="flex items-center space-x-3 mb-6">
                 <span class="text-2xl font-bold text-blue-500">4.</span>
-                <h2 class="text-2xl font-bold text-white">Responsive Design</h2>
+                <h2 class="text-2xl font-bold text-white">Responsive Design (Thiết Kế Đa Màn Hình)</h2>
             </div>
-            <p class="text-slate-300 mb-6">Kỹ thuật giúp trang web tự động co giãn đẹp mắt trên mọi thiết bị (PC, Tablet, Mobile) chủ yếu thông qua <span class="text-indigo-400 font-semibold">Media Queries</span>.</p>
+            
+            <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                <p>
+                    Người dùng thời đại số lướt web thông qua vô số nền tảng phần cứng khác nhau: từ những chiếc đồng hồ thông minh, điện thoại di động màn hình nhỏ gọn, máy tính bảng cho tới màn hình máy tính UltraWide khổng lồ. <strong>Responsive Design (Thiết kế đáp ứng)</strong> là tập hợp các tư duy và giải pháp kỹ thuật giúp giao diện tự động co giãn, tái cấu trúc bố cục một cách thông minh sao cho hiển thị tối ưu và đẹp mắt nhất trên mọi độ phân giải mà không cần phải lập trình nhiều phiên bản web độc lập.
+                </p>
 
-            <div class="game-container border-t border-slate-700/60 pt-6">
-                <h4 class="text-sm font-bold text-yellow-400 uppercase tracking-wider mb-3">🎮 Mini Game: Kỹ Thuật Di Động</h4>
-                <p class="text-sm mb-4">Công cụ cốt lõi nào trong CSS thuần cho phép lập trình viên viết các luật định dạng khác nhau tùy theo độ rộng màn hình?</p>
-                <div class="grid grid-cols-2 gap-3 text-sm">
-                    <button onclick="checkAnswer(this, true, 'responsive')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">A. Media Queries</button>
-                    <button onclick="checkAnswer(this, false, 'responsive')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">B. Keyframes Animation</button>
-                    <button onclick="checkAnswer(this, false, 'responsive')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">C. Flex-wrap</button>
-                    <button onclick="checkAnswer(this, false, 'responsive')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">D. JavaScript DOM</button>
+                <div class="flex flex-col md:flex-row gap-6 items-center my-4">
+                    <div class="flex-1 space-y-3 text-xs md:text-sm text-slate-300">
+                        <p>Công cụ nền tảng và cốt lõi nhất để hiện thực hóa Responsive trong CSS thuần chính là kỹ thuật <strong class="text-emerald-400">Media Queries</strong>. Nó hoạt động giống như một bộ lọc điều kiện logic kiểm tra thông số thiết bị phần cứng thực tế.</p>
+                        <p>Khi trình duyệt phát hiện chiều rộng màn hình của người dùng chạm tới các điểm mốc quy định (gọi là các điểm gãy - Breakpoints, ví dụ phổ biến như 576px cho Mobile, 768px cho Tablet, 1024px cho Desktop), nó sẽ ngay lập tức kích hoạt kích thước chữ mới, ẩn bớt thanh bên (sidebar) rườm rà, hoặc chuyển đổi bố cục 3 cột trên máy tính thành bố cục 1 cột dọc thẳng đứng trên điện thoại để người dùng dễ dàng dùng ngón tay cuộn vuốt.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=500&auto=format&fit=crop" alt="Responsive Design Screens" class="w-full md:w-72 h-40 object-cover rounded-xl border border-slate-700 shadow-inner">
                 </div>
-                <div class="result-msg mt-3 text-sm font-semibold hidden"></div>
             </div>
         </section>
 
-        <section id="frameworks" class="section-card bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 md:p-8 shadow-xl">
+        <section id="frameworks" class="section-card bg-slate-800/80 border border-slate-700/60 rounded-2xl p-6 md:p-8 shadow-xl">
             <div class="flex items-center space-x-3 mb-6">
                 <span class="text-2xl font-bold text-blue-500">5.</span>
-                <h2 class="text-2xl font-bold text-white">CSS Frameworks: Bootstrap vs Tailwind</h2>
+                <h2 class="text-2xl font-bold text-white">CSS Frameworks: Trận Chiến Giữa Hai Triết Lý</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-4 mb-6 text-sm text-slate-300">
-                <div class="p-4 bg-purple-950/30 border border-purple-900/50 rounded-xl">
-                    <h4 class="font-bold text-purple-400 mb-1">Bootstrap (Component-based)</h4>
-                    <p>Cung cấp sẵn UI hoàn chỉnh (.btn, .card, .navbar). Tạo mẫu trang web cực nhanh.</p>
+            
+            <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                <p>
+                    Khi tham gia vào các dự án phần mềm lớn mang tính thương mại, việc ngồi viết thủ công từng dòng code CSS thuần từ con số 0 sẽ tiêu tốn cực kỳ nhiều thời gian, dễ phát sinh lỗi xung đột tên class và gây phình to hệ thống mã nguồn. Đó là lý do các <strong>CSS Frameworks</strong> ra đời nhằm cung cấp các tiêu chuẩn hệ thống đã được tối ưu hóa sẵn, giúp lập trình viên gia tăng tốc độ xây dựng giao diện lên gấp nhiều lần. Hiện nay, thế giới công nghệ chia làm 2 hệ tư tưởng thống trị:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 pt-2">
+                    <div class="p-5 bg-purple-950/20 border border-purple-900/40 rounded-2xl">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <span class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center font-bold text-sm">B</span>
+                            <h4 class="text-lg font-bold text-purple-300">Bootstrap (Component-driven)</h4>
+                        </div>
+                        <div class="text-xs md:text-sm text-slate-300 space-y-3 leading-relaxed">
+                            <p><strong>Bản chất:</strong> Đi theo triết lý "linh kiện đúc sẵn". Khối thư viện khổng lồ này cung cấp cho bạn một bộ các thành phần UI hoàn chỉnh đã được định kiểu dáng hoàn thiện như nút bấm, bảng biểu, hộp hội thoại modal, thanh điều hướng navbar.</p>
+                            <p><strong>Hệ thống lưới:</strong> Chia màn hình thành lưới 12 cột dựa trên Flexbox để xử lý bố cục responsive vô cùng nhanh chóng và đồng bộ.</p>
+                            <p><strong>Ưu điểm:</strong> Chỉ cần gọi tên class chuẩn (ví dụ <code class="text-purple-400">.btn .btn-primary</code>) là có ngay giao diện chuẩn chỉnh, cực kỳ thích hợp cho việc làm dự án mẫu thần tốc (Prototype) hoặc các trang quản trị nội bộ hệ thống (Admin Dashboard).</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-teal-950/20 border border-teal-900/40 rounded-2xl">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <span class="w-8 h-8 bg-teal-500 text-white rounded-lg flex items-center justify-center font-bold text-xs">⚡</span>
+                            <h4 class="text-lg font-bold text-teal-300">Tailwind CSS (Utility-first)</h4>
+                        </div>
+                        <div class="text-xs md:text-sm text-slate-300 space-y-3 leading-relaxed">
+                            <p><strong>Bản chất:</strong> Đi theo triết lý "nguyên tử tiện ích". Ngược lại với Bootstrap, Tailwind không bố thí cho bạn bất kỳ khối linh kiện làm sẵn nào cả, thay vào đó cung cấp hàng ngàn class tiện ích độc lập siêu nhỏ đóng vai trò như các thuộc tính CSS nguyên thủy đơn lẻ.</p>
+                            <p><strong>Cách dùng:</strong> Bạn lắp ghép trực tiếp các class này như gạch Lego ngay trong file HTML (ví dụ: <code class="text-teal-400">bg-blue-500 p-4 rounded-xl text-center shadow-lg</code>).</p>
+                            <p><strong>Ưu điểm:</strong> Tùy biến tự do giao diện độc bản 100% theo ý muốn thiết kế riêng của Designer mà không bao giờ sợ bị gò bó hay trùng lặp phong cách giao diện với các trang web khác trên mạng, hỗ trợ viết responsive cực mạnh qua tiền tố như <code class="text-teal-400">md:flex</code>.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-4 bg-teal-950/30 border border-teal-900/50 rounded-xl">
-                    <h4 class="font-bold text-teal-400 mb-1">Tailwind CSS (Utility-first)</h4>
-                    <p>Cung cấp các lớp tiện ích nhỏ (bg-red-500, p-4). Tùy biến giao diện linh hoạt 100%.</p>
-                </div>
+            </div>
+        </section>
+
+
+        <hr class="border-slate-800">
+
+        <section id="mini-game-hub" class="section-card bg-gradient-to-b from-slate-950 to-slate-900 border-2 border-amber-500/40 rounded-3xl p-6 md:p-8 shadow-2xl">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <span class="bg-amber-500/20 text-amber-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Trạm kiểm tra năng lực</span>
+                <h2 class="text-3xl font-black text-white mt-3">🎮 KHU THỬ THÁCH MINI GAME 🎮</h2>
+                <p class="text-sm text-slate-400 mt-2">Đã đến lúc kiểm tra lượng kiến thức chuyên sâu bạn vừa nạp vào người ở phía trên rồi! Hãy trả lời trọn vẹn các câu đố thực chiến dưới đây.</p>
             </div>
 
-            <div class="game-container border-t border-slate-700/60 pt-6">
-                <h4 class="text-sm font-bold text-yellow-400 uppercase tracking-wider mb-3">🎮 Mini Game: Khác Biệt Tư Duy</h4>
-                <p class="text-sm mb-4">Framework nào đi theo triết lý "Utility-first" (Cung cấp hàng trăm lớp tiện ích nhỏ nguyên tử thay vì cung cấp sẵn linh kiện nguyên khối)?</p>
-                <div class="grid grid-cols-2 gap-3 text-sm">
-                    <button onclick="checkAnswer(this, false, 'frameworks')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">A. Bootstrap</button>
-                    <button onclick="checkAnswer(this, true, 'frameworks')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">B. Tailwind CSS</button>
-                    <button onclick="checkAnswer(this, false, 'frameworks')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">C. Bulma</button>
-                    <button onclick="checkAnswer(this, false, 'frameworks')" class="p-3 bg-slate-900 hover:bg-slate-700 rounded-lg text-left transition">D. Sass/SCSS</button>
+            <div class="space-y-8">
+                <div class="p-5 bg-slate-900 border border-slate-800 rounded-xl relative">
+                    <span class="absolute -top-3 left-4 bg-blue-600 text-white font-mono text-xs px-2 py-0.5 rounded-full">Câu hỏi 1: Box Model</span>
+                    <p class="text-sm font-medium text-slate-200 mb-4 mt-1">Một khối phần tử HTML được đặt thuộc tính: <code class="text-amber-400 font-mono">width: 250px; padding: 20px; border: 5px solid red; margin: 15px;</code>. Hỏi tổng chiều rộng vật lý thực tế mà khối này chiếm dụng trên layout là bao nhiêu?</p>
+                    <div class="grid sm:grid-cols-2 gap-3 text-sm">
+                        <button onclick="checkAnswer(this, false, 'q1')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">A. 275px</button>
+                        <button onclick="checkAnswer(this, true, 'q1')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">B. 300px (Chính xác vì = 250 + 20*2 + 5*2)</button>
+                        <button onclick="checkAnswer(this, false, 'q1')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">C. 330px (Sai vì lầm tưởng cộng cả margin)</button>
+                        <button onclick="checkAnswer(this, false, 'q1')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">D. 250px</button>
+                    </div>
+                    <div id="q1-msg" class="mt-3 text-sm font-semibold hidden"></div>
                 </div>
-                <div class="result-msg mt-3 text-sm font-semibold hidden"></div>
+
+                <div class="p-5 bg-slate-900 border border-slate-800 rounded-xl relative">
+                    <span class="absolute -top-3 left-4 bg-indigo-600 text-white font-mono text-xs px-2 py-0.5 rounded-full">Câu hỏi 2: Layouts</span>
+                    <p class="text-sm font-medium text-slate-200 mb-4 mt-1">Bạn cần xây dựng một thanh menu điều hướng nằm ngang nằm trên đầu website, các nút cách đều nhau linh hoạt và tự động căn giữa trục dọc. Công cụ nào sinh ra để làm việc này nhanh nhất?</p>
+                    <div class="grid sm:grid-cols-2 gap-3 text-sm">
+                        <button onclick="checkAnswer(this, true, 'q2')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">A. Hệ thống Flexbox một chiều</button>
+                        <button onclick="checkAnswer(this, false, 'q2')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">B. Hệ thống Grid hai chiều</button>
+                        <button onclick="checkAnswer(this, false, 'q2')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">C. Thuộc tính display: inline;</button>
+                        <button onclick="checkAnswer(this, false, 'q2')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">D. Dùng Margin căn lề thủ công</button>
+                    </div>
+                    <div id="q2-msg" class="mt-3 text-sm font-semibold hidden"></div>
+                </div>
+
+                <div class="p-5 bg-slate-900 border border-slate-800 rounded-xl relative">
+                    <span class="absolute -top-3 left-4 bg-emerald-600 text-white font-mono text-xs px-2 py-0.5 rounded-full">Câu hỏi 3: Display</span>
+                    <p class="text-sm font-medium text-slate-200 mb-4 mt-1">Sự khác biệt cốt lõi nhất giữa thuộc tính ẩn khối <code class="text-rose-400">display: none;</code> và thuộc tính ẩn khối <code class="text-rose-400">visibility: hidden;</code> là gì?</p>
+                    <div class="grid sm:grid-cols-2 gap-3 text-sm">
+                        <button onclick="checkAnswer(this, false, 'q3')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">A. Không có sự khác biệt nào</button>
+                        <button onclick="checkAnswer(this, true, 'q3')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">B. display: none ẩn hoàn toàn và xóa bỏ diện tích; còn visibility vẫn giữ khoảng trống rỗng</button>
+                        <button onclick="checkAnswer(this, false, 'q3')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">C. visibility ẩn khối nhanh hơn</button>
+                        <button onclick="checkAnswer(this, false, 'q3')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">D. display: none vẫn chừa lại ô trống trên màn hình</button>
+                    </div>
+                    <div id="q3-msg" class="mt-3 text-sm font-semibold hidden"></div>
+                </div>
+
+                <div class="p-5 bg-slate-900 border border-slate-800 rounded-xl relative">
+                    <span class="absolute -top-3 left-4 bg-teal-600 text-white font-mono text-xs px-2 py-0.5 rounded-full">Câu hỏi 4: CSS Frameworks</span>
+                    <p class="text-sm font-medium text-slate-200 mb-4 mt-1">Nếu bạn được yêu cầu xây dựng một sản phẩm website độc quyền có nhận diện thương hiệu riêng biệt, giao diện mang tính chất phá cách 100% không trùng lặp, bạn nên ưu tiên chọn Framework nào?</p>
+                    <div class="grid sm:grid-cols-2 gap-3 text-sm">
+                        <button onclick="checkAnswer(this, false, 'q4')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">A. Bootstrap vì linh kiện đúc sẵn cố định</button>
+                        <button onclick="checkAnswer(this, true, 'q4')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">B. Tailwind CSS để lắp ghép class tùy biến vô hạn</button>
+                        <button onclick="checkAnswer(this, false, 'q4')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">C. Không dùng cái nào cả, viết lại hệ thống bằng ngôn ngữ khác</button>
+                        <button onclick="checkAnswer(this, false, 'q4')" class="p-3 bg-slate-800 hover:bg-slate-700 rounded-lg text-left transition">D. Cả hai framework đều gò bó như nhau</button>
+                    </div>
+                    <div id="q4-msg" class="mt-3 text-sm font-semibold hidden"></div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-slate-950 text-slate-500 text-center py-6 text-xs border-t border-slate-900">
-        <p>&copy; 2026. Built with Interactive JavaScript & Tailwind CSS.</p>
+    <footer class="bg-slate-950 text-slate-600 text-center py-6 text-xs border-t border-slate-900">
+        <p>&copy; 2026. Giáo trình tương tác CSS nâng cao và Mini Game Hub.</p>
     </footer>
 
     <script>
-        // Hàm xử lý Highlight phần được chọn và làm tối/ẩn các phần còn lại
         function focusSection(targetId) {
             const sections = document.querySelectorAll('.section-card');
             const navButtons = document.querySelectorAll('.nav-btn');
             
             sections.forEach(section => {
                 if (section.id === targetId) {
-                    // Phần được chọn: Giữ độ sáng, đẩy nổi bật lên, hiển thị nội dung
-                    section.classList.remove('opacity-20', 'pointer-events-none', 'scale-95');
-                    section.classList.add('opacity-100', 'scale-100', 'border-blue-500/50', 'bg-slate-800');
-                    // Tự động cuộn mượt mà đến vùng được chọn
+                    // Kích hoạt highlight phần được chọn
+                    section.classList.remove('opacity-25', 'pointer-events-none', 'scale-95');
+                    section.classList.add('opacity-100', 'scale-100', 'glow-effect');
+                    
+                    if (targetId === 'mini-game-hub') {
+                        section.className = "section-card bg-gradient-to-b from-slate-950 to-slate-900 border-2 border-amber-500 rounded-3xl p-6 md:p-8 shadow-2xl scale-100 opacity-100";
+                    } else {
+                        section.className = "section-card bg-slate-800/90 border border-blue-500/50 rounded-2xl p-6 md:p-8 shadow-xl scale-100 opacity-100";
+                    }
+                    
                     section.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } else {
-                    // Phần KHÔNG được chọn: Làm mờ đi đáng kể và thu nhỏ nhẹ
-                    section.classList.remove('opacity-100', 'scale-100', 'border-blue-500/50', 'bg-slate-800');
-                    section.classList.add('opacity-20', 'scale-95');
+                    // Làm tối các phần còn lại
+                    section.classList.remove('opacity-100', 'scale-100', 'glow-effect');
+                    section.classList.add('opacity-25', 'scale-95');
+                    
+                    if(section.id === 'mini-game-hub') {
+                        section.className = "section-card bg-slate-900/40 border border-slate-800 rounded-3xl p-6 md:p-8 opacity-25 scale-95 pointer-events-none";
+                    } else {
+                        section.className = "section-card bg-slate-800/20 border border-transparent rounded-2xl p-6 md:p-8 opacity-25 scale-95 pointer-events-none";
+                    }
                 }
             });
 
-            // Đổi trạng thái màu sắc của nút bấm trên thanh Menu điều hướng
-            const btnMapping = ['box-model', 'layouts', 'display', 'responsive', 'frameworks'];
+            // Đồng bộ màu sắc Menu nút bấm tương ứng
+            const btnMapping = ['box-model', 'layouts', 'display', 'responsive', 'frameworks', 'mini-game-hub'];
             navButtons.forEach((btn, index) => {
                 if (btnMapping[index] === targetId) {
-                    btn.className = "nav-btn px-3 py-1.5 rounded-lg bg-slate-800 text-blue-400 font-bold border border-blue-500/30 transition";
+                    if (targetId === 'mini-game-hub') {
+                        btn.className = "nav-btn px-4 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-black shadow-lg transition";
+                    } else {
+                        btn.className = "nav-btn px-3 py-1.5 rounded-lg bg-slate-800 text-blue-400 font-bold border border-blue-500/30 transition";
+                    }
                 } else {
-                    btn.className = "nav-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700 transition";
+                    if (btnMapping[index] === 'mini-game-hub') {
+                        btn.className = "nav-btn px-4 py-1.5 rounded-lg bg-amber-700/60 text-amber-300 hover:bg-amber-600 transition font-bold";
+                    } else {
+                        btn.className = "nav-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700 transition";
+                    }
                 }
             });
         }
 
-        // Hàm kiểm tra đáp án của Mini Game
-        function checkAnswer(button, isCorrect, sectionId) {
-            // Tìm vùng hiển thị thông báo kết quả trong section hiện tại
-            const section = document.getElementById(sectionId);
-            const msgElement = section.querySelector('.result-msg');
-            const buttons = section.querySelectorAll('.game-container button');
+        function checkAnswer(button, isCorrect, qId) {
+            const container = button.parentElement;
+            const msgElement = document.getElementById(qId + '-msg');
+            const buttons = container.querySelectorAll('button');
 
-            // Khóa không cho bấm lại các đáp án khác trong câu hỏi đó
             buttons.forEach(btn => btn.disabled = true);
 
             if (isCorrect) {
-                button.classList.remove('bg-slate-900');
-                button.classList.add('bg-green-600', 'text-white');
-                msgElement.textContent = "🎉 Chính xác! Bạn đã hiểu bài rất tốt.";
-                msgElement.className = "result-msg mt-3 text-sm font-semibold text-green-400 block";
+                button.className = "p-3 bg-green-600 text-white rounded-lg text-left font-semibold transition";
+                msgElement.textContent = "🎉 Tuyệt vời! Đáp án hoàn toàn chính xác.";
+                msgElement.className = "mt-3 text-sm font-semibold text-green-400 block";
             } else {
-                button.classList.remove('bg-slate-900');
-                button.classList.add('bg-rose-600', 'text-white');
-                msgElement.textContent = "❌ Chưa chính xác rồi! Hãy đọc kỹ lại phần lý thuyết ở trên nhé.";
-                msgElement.className = "result-msg mt-3 text-sm font-semibold text-rose-400 block";
+                button.className = "p-3 bg-rose-600 text-white rounded-lg text-left transition";
+                msgElement.textContent = "❌ Chưa đúng rồi! Hãy cuộn lên đọc kỹ lại kiến thức của chương tương ứng nhé.";
+                msgElement.className = "mt-3 text-sm font-semibold text-rose-400 block";
                 
-                // Hiển thị đáp án đúng để người học đối chiếu
                 buttons.forEach(btn => {
                     if (btn.getAttribute('onclick').includes('true')) {
-                        btn.classList.add('border', 'border-green-500', 'text-green-400');
+                        btn.classList.add('border-2', 'border-green-500', 'text-green-400');
                     }
                 });
             }
